@@ -1,0 +1,230 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100vh;
+    background-image: url('../img/fondo.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.login-container {
+    text-align: center;
+    width: 499px; /* Aumenta un 15% */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-right: 88px; /* Aumenta un 15% */
+}
+
+.form-container h1,
+.text-container h1.main-title,
+#rescatandoGarritas {
+    color: #fff;
+    margin-bottom: 40px;
+    font-family: 'Amasis MT Pro Black', 'Arial', sans-serif;
+    font-size: 250%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+}
+
+input,
+select {
+    margin-bottom: 16px;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="email"],
+input[type="password"] {
+    font-family: 'Arial', sans-serif;
+}
+
+input[type="submit"],
+button {
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.social-icons {
+    display: flex;
+    justify-content: space-around;
+    font-size: 24px;
+}
+
+.social-icons svg {
+    margin: 10px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons svg:hover {
+    transform: scale(1.2);
+}
+
+#box {
+    position: absolute;
+    top: 47%;
+    left: 10%;
+}
+
+.text-container {
+    display: none;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 448.5px; /* Aumenta un 15% */
+    text-align: left;
+    font-family: 'Arial', sans-serif;
+    color: #777;
+    opacity: 0;
+    transition: top 0.3s ease, opacity 0.5s ease, color 0.3s ease, font-size 0.3s ease, width 0.3s ease;
+}
+
+.text-container:hover {
+    top: 50%;
+    color: #fff;
+    font-size: 107%;
+    width: 470.250px; /* Aumenta un 15% */
+}
+
+.text-container.show {
+    display: block;
+    top: 55%;
+    opacity: 1;
+    width: 1000px; /* Aumenta un 15% */
+}
+
+.text-container p,
+.text-container h2 {
+    color: #fff;
+    width: 640px;
+}
+
+.text-container p:hover,
+.text-container h2:hover {
+    font-size: 107%;
+}
+
+.quote-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.quote-list li::before {
+    content: '\2022';
+    color: #f3f0f0;
+    margin-right: 5px;
+}
+
+.title-container {
+    position: absolute;
+    top: 100px;
+    left: 190px; /* Ajusta la posición lateral del contenedor del título */
+    color: white;
+    font-size: 400%;
+    text-align: left;
+}
+
+/* Estilos específicos para el título "Rescatando Garritas" */
+#rescatandoGarritas {
+    color: #fff;
+    font-size: 90%;
+    position: relative;
+    top: -20px;
+    font-family: 'Algerian', 'Arial', sans-serif;
+}
+
+.title-container h2 {
+    color: rgb(243, 234, 234);
+    font-size: 130%;
+}
+
+.title-container img {
+    max-width: 100px;
+}
+
+/* Estilos para el nuevo contenedor */
+.nuevo-contenedor {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000; /* Asegura que el nuevo contenedor esté en la parte superior */
+}
+
+/* Estilos para el contenedor de imágenes */
+.imagenes-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Estilos para las imágenes redondas */
+.image-redonda-1,
+.image-redonda-2,
+.image-redonda-3 {
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 100px;
+    margin-right: 10px;
+}
+
+/* Estilos para aumentar el tamaño al pasar el cursor sobre las imágenes */
+.image-redonda-1:hover,
+.image-redonda-2:hover,
+.image-redonda-3:hover {
+    transform: scale(2); /* Aumentamos el tamaño de las imágenes en un 50% al pasar el cursor */
+    transition: transform 0.3s ease; /* Agregamos una transición suave */
+}
+
+/* Estilos para el contenedor del logo */
+.logo-container {
+    position: fixed;
+    top: 20px; /* Ajusta la distancia desde la parte superior */
+    left: 20px; /* Ajusta la distancia desde la izquierda */
+}
+
+/* Estilos para el logo */
+.logo {
+    width: 100px; /* Tamaño del logo */
+    height: 100px; /* Igualamos la altura a la anchura para hacerlo completamente redondo */
+    border-radius: 50%; /* Hacemos que el logo sea completamente redondo */
+    transition: transform 0.3s ease; /* Agregamos una transición suave */
+}
+
+/* Estilos para la animación al pasar el cursor sobre el logo */
+.logo:hover {
+    transform: scale(1.30); /* Aumentamos el tamaño del logo en un 5% al pasar el cursor */
+}
+

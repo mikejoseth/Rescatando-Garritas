@@ -1,0 +1,19 @@
+#homeContainer {
+    display: flex;
+  }
+  
+  #logoutContainer {
+    margin-right: auto; /* Empuja el contenedor hacia la izquierda */
+    padding: 10px; /* Ajusta según sea necesario */
+  }
+  
+  #cerrarSesionBtn {
+    background-color: #283ba9;
+    color: #ffffff;
+    /* Otros estilos que desees aplicar al botón */
+  }
+  
+  #cerrarSesionBtn:hover {
+    background-color: #ece6ec;
+  }
+  

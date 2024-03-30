@@ -1,0 +1,205 @@
+/* Estilos para las imágenes en la galería */
+.image-gallery {
+    position: relative; /* Hace que la posición absoluta de la imagen 2 sea relativa a este contenedor */
+    display: inline-block; /* Asegura que el contenedor ocupe solo el espacio necesario */
+}
+
+/* Estilos generales para las imágenes */
+.gallery-image,
+.new-container-image {
+    width: 150px; /* Ajusta el ancho según tus necesidades */
+    height: 150px; /* Ajusta el alto según tus necesidades */
+    border-radius: 50%; /* Esto hace que los bordes sean redondeados */
+    margin-right: 10px; /* Añade un margen derecho para separar las imágenes */
+    margin-bottom: 10px; /* Añade un margen inferior para separar las imágenes en la siguiente línea */
+    overflow: hidden; /* Oculta cualquier parte de la imagen que se desborde del contenedor */
+    position: relative; /* Añadido */
+}
+
+.overlay-image {
+    position: absolute; /* Posiciona la imagen 2 encima de la imagen 1 */
+    top: 0;
+    left: 0;
+    opacity: 0; /* Inicialmente oculta la imagen 2 */
+    transition: opacity 0.3s ease-in-out; /* Agregamos una transición suave de opacidad */
+}
+
+/* Mostrar imagen 2 cuando el cursor está sobre imagen 1 */
+.gallery-image:hover .overlay-image {
+    opacity: 1; /* Cuando el cursor esté sobre la imagen 1, muestra la imagen 2 */
+}
+
+/* Estilos para el contenedor de imágenes */
+.new-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las imágenes se envuelvan automáticamente a una nueva línea cuando se desbordan */
+    justify-content: center; /* Centra las imágenes horizontalmente */
+}
+
+/* Resto del CSS original... */
+
+#backgroundImageContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/src/img/logo.png');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+#adoptTextContainer {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    width: 50%;
+}
+
+#adoptText {
+    color: #fff;
+    font-size: 48px;
+}
+
+#userContainer {
+    background-color: #e0e0e0;
+    padding: 20px;
+    border: 1px solid #999;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+#userTitle {
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#cerrarSesionBtn {
+    background-color: #efebeb;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+#cerrarSesionBtn:hover {
+    background-color: #c0baba;
+}
+
+/* Cat Container Styles */
+.cat-container,
+.cat-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    border: 2px solid white;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.cat-container:hover,
+.cat-info:hover {
+    opacity: 1;
+}
+
+.cat-image {
+    width: 100px;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.cat-image:hover {
+    transform: scale(1.9);
+}
+
+.cat-info h2 {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.cat-info p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* Adoption Form Styles */
+/* Adoption Form Styles */
+.adoption-form-container,
+.adoption-form-container.active {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    border: 3px solid #37d2d2; /* Aumenté el grosor del borde y mantuve el color celeste por defecto */
+    border-radius: 12px; /* Bordes redondeados */
+    padding: 8px; /* Reduje el espacio interno a 8px */
+    width: 50%; /* Reduje el ancho del contenedor del formulario al 50% */
+    max-height: 300px; /* Reduje la altura máxima del contenedor del formulario a 300px */
+    margin: 0 auto;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+    animation: borderBlink 1.5s infinite alternate; /* Agregué la animación de parpadeo */
+}
+
+@keyframes borderBlink {
+    from {
+        border-color: #37d2d2; /* Color celeste */
+    }
+    to {
+        border-color: #e5e8ec; /* Otro color celeste */
+    }
+}
+
+.adoption-form-container.active {
+    opacity: 1;
+    max-height: 400px; /* Incrementé la altura máxima deseada */
+    border-color: #e5e8ec; /* Color del borde cuando está activo */
+}
+
+.adoption-form-container form {
+    font-size: 12px; /* Reduje el tamaño de fuente */
+    margin-bottom: 6px; /* Reduje el margen inferior */
+}
+
+.adoption-form-container label {
+    margin-bottom: 2px; /* Reduje el margen inferior de las etiquetas */
+}
+
+.adoption-form-container input,
+.adoption-form-container textarea {
+    margin-bottom: -8px; /* Reduje el margen inferior de los campos de entrada */
+    width: calc(100% - 8px); /* Haciendo el ancho del 100% y ajustando el espacio interno */
+}
+
+/* Adopt Button Styles */
+.adopt-button {
+    background-color: #37d2d2;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.adopt-button:hover {
+    background-color: #e5e8ec;
+}
