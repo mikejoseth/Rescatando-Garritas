@@ -6,6 +6,11 @@ import catImage1 from '../img/cruela.jpg';
 import catImage2 from '../img/hitler.jpg';
 import catImage3 from '../img/1.jpeg';
 import catImage4 from '../img/-1.jpeg';
+import catImage5 from '../img/fores.png';
+import catImage6 from '../img/picachu.png';
+import catImage7 from '../img/sol.png';
+import catImage8 from '../img/cachetes.png';
+import eyImage from '../img/ey.png';
 
 const firebaseConfig = {
     apiKey: "AIzaSyB5lgnKlzvwUJeoMUvGuhVA3lshzslVod0",
@@ -21,10 +26,78 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
 function UserView() {
-    const [nombre, setNombre] = useState('');
-    const [email, setEmail] = useState('');
-    const [telefono, setTelefono] = useState('');
-    const [motivo, setMotivo] = useState('');
+    const [cats, setCats] = useState([
+        { 
+            name: "Ralla", 
+            description: "Ralla es una pequeña acróbata peluda. Su juego favorito es perseguir juguetes coloridos por toda la casa. Cuando no está jugando, la encontrarás durmiendo plácidamente en su lugar favorito. ¡Esta intrépida amiga hará de tu hogar un lugar lleno de diversión y sueños!", 
+            image: catImage1,
+            form: {
+                nombre: '',
+                email: '',
+                telefono: '',
+                motivo: ''
+            }
+        },
+        { 
+            name: "timoti", 
+            description: "Timoti es un pequeño corredor peluda. Su juego favorito es perseguir juguetes coloridos por toda la casa. Cuando no está jugando, la encontrarás durmiendo plácidamente en su lugar favorito. ¡Esta intrépida amiga hará de tu hogar un lugar lleno de diversión y sueños!", 
+            image: catImage5,
+            form: {
+                nombre: '',
+                email: '',
+                telefono: '',
+                motivo: ''
+            }
+        },
+        { 
+            name: "julith", 
+            description: "julieth es una pequeña acróbata peluda. Su juego favorito es perseguir juguetes coloridos por toda la casa. Cuando no está jugando, la encontrarás durmiendo plácidamente en su lugar favorito. ¡Esta intrépida amiga hará de tu hogar un lugar lleno de diversión y sueños!", 
+            image: catImage6,
+            form: {
+                nombre: '',
+                email: '',
+                telefono: '',
+                motivo: ''
+            }
+        },
+        { 
+            name: "sol", 
+            description: "sol es una pelietas  peluda. Su juego favorito es perseguir juguetes coloridos por toda la casa. Cuando no está jugando, la encontrarás durmiendo plácidamente en su lugar favorito. ¡Esta intrépida amiga hará de tu hogar un lugar lleno de diversión y sueños!", 
+            image: catImage7,
+            form: {
+                nombre: '',
+                email: '',
+                telefono: '',
+                motivo: ''
+            }
+        },
+        { 
+            name: "cachetes", 
+            description: "cachetes un destructor de mundos . Su juego favorito es perseguir juguetes coloridos por toda la casa. Cuando no está jugando, la encontrarás durmiendo plácidamente en su lugar favorito. ¡Esta intrépida amiga hará de tu hogar un lugar lleno de diversión y sueños!", 
+            image: catImage8,
+            form: {
+                nombre: '',
+                email: '',
+                telefono: '',
+                motivo: ''
+            }
+        },
+
+        { 
+            name: "Hitler", 
+            description: "Descripción:Hitler es una gatita elegante y curiosa con una personalidad tranquila. Le encanta explorar cada rincón de la casa y observar el mundo desde las alturas. A pesar de su nombre, esta gatita es toda dulzura. Con sus 2 años, es la compañera perfecta para charlas tranquilas y momentos relajados. .", 
+            image: catImage2,
+            form: {
+                nombre: '',
+                email: '',
+                telefono: '',
+                motivo: ''
+            }
+        }
+        
+        
+    ]);
+
     const [showSuccessMessage, setShowSuccessMessage] = useState(false);
     const [numeroAdopcion, setNumeroAdopcion] = useState(null); 
     const [showAdoptionForm, setShowAdoptionForm] = useState(false);
@@ -32,16 +105,16 @@ function UserView() {
     const [showNewContainer, setShowNewContainer] = useState(false);
     const [currentImage, setCurrentImage] = useState(catImage3);
 
-    const handleFormSubmit = (event) => {
+    const handleFormSubmit = (event, index) => {
         event.preventDefault();
 
         const numeroAdopcionGenerado = Math.floor(Math.random() * 10000) + 1;
 
         db.collection("solicitudes_adopcion").add({
-            nombre: nombre,
-            email: email,
-            telefono: telefono,
-            motivo: motivo,
+            nombre: cats[index].form.nombre,
+            email: cats[index].form.email,
+            telefono: cats[index].form.telefono,
+            motivo: cats[index].form.motivo,
             numeroAdopcion: numeroAdopcionGenerado
         })
         .then(function(docRef) {
@@ -74,19 +147,35 @@ function UserView() {
         setCurrentImage(currentImage === catImage3 ? catImage4 : catImage3);
     };
 
-    const cats = [
-        { name: "Ralla", description: "Descripción: Ralla es una pequeña acróbata peluda. Su juego favorito es perseguir juguetes coloridos por toda la casa. Cuando no está jugando, la encontrarás durmiendo plácidamente en su lugar favorito. ¡Esta intrépida amiga hará de tu hogar un lugar lleno de diversión y sueños!", image: catImage1 },
-        { name: "Hitler", description: "Descripción: Hitler es una gatita elegante y curiosa con una personalidad tranquila. Le encanta explorar cada rincón de la casa y observar el mundo desde las alturas. A pesar de su nombre, esta gatita es toda dulzura. Con sus 2 años, es la compañera perfecta para charlas tranquilas y momentos relajados.", image: catImage2 },
-        { name: "Hitler", description: "Descripción: Hitler es una gatita elegante y curiosa con una personalidad tranquila. Le encanta explorar cada rincón de la casa y observar el mundo desde las alturas. A pesar de su nombre, esta gatita es toda dulzura. Con sus 2 años, es la compañera perfecta para charlas tranquilas y momentos relajados.", image: catImage2 },
-        { name: "Hitler", description: "Descripción: Hitler es una gatita elegante y curiosa con una personalidad tranquila. Le encanta explorar cada rincón de la casa y observar el mundo desde las alturas. A pesar de su nombre, esta gatita es toda dulzura. Con sus 2 años, es la compañera perfecta para charlas tranquilas y momentos relajados.", image: catImage2 },
-        { name: "Hitler", description: "Descripción: Hitler es una gatita elegante y curiosa con una personalidad tranquila. Le encanta explorar cada rincón de la casa y observar el mundo desde las alturas. A pesar de su nombre, esta gatita es toda dulzura. Con sus 2 años, es la compañera perfecta para charlas tranquilas y momentos relajados.", image: catImage2 },
-        { name: "Hitler", description: "Descripción: Hitler es una gatita elegante y curiosa con una personalidad tranquila. Le encanta explorar cada rincón de la casa y observar el mundo desde las alturas. A pesar de su nombre, esta gatita es toda dulzura. Con sus 2 años, es la compañera perfecta para charlas tranquilas y momentos relajados.", image: catImage2 },
-        
-        // Agrega más gatos aquí
-    ];
+    const handleNombreChange = (index, value) => {
+        const updatedCats = [...cats];
+        updatedCats[index].form.nombre = value;
+        setCats(updatedCats);
+    };
+
+    const handleEmailChange = (index, value) => {
+        const updatedCats = [...cats];
+        updatedCats[index].form.email = value;
+        setCats(updatedCats);
+    };
+
+    const handleTelefonoChange = (index, value) => {
+        const updatedCats = [...cats];
+        updatedCats[index].form.telefono = value;
+        setCats(updatedCats);
+    };
+
+    const handleMotivoChange = (index, value) => {
+        const updatedCats = [...cats];
+        updatedCats[index].form.motivo = value;
+        setCats(updatedCats);
+    };
 
     return (
         <div>
+            <div class="f">
+                <img src={require('../img/logo2.png')} alt="Gatito" />
+            </div>
             <div id="backgroundImageContainer"></div>
             <div id="adoptTextContainer">
                 <h1 id="adoptText">Adopta</h1>
@@ -111,28 +200,31 @@ function UserView() {
                             </button>
                             {showAdoptionForm && (
                                 <div className={`adoption-form-container ${showAdoptionForm ? 'active' : ''}`}>
-                                    <form className="adoption-form" onSubmit={handleFormSubmit}>
+                                    <form className="adoption-form" onSubmit={(event) => handleFormSubmit(event, index)}>
                                         <label htmlFor="nombre">Nombre Completo:</label>
-                                        <input type="text" id="nombre" value={nombre} onChange={(e) => setNombre(e.target.value)} required /><br />
+                                        <input type="text" id="nombre" value={cat.form.nombre} onChange={(e) => handleNombreChange(index, e.target.value)} required /><br />
 
                                         <label htmlFor="email">Correo Electrónico:</label>
-                                        <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} required /><br />
+                                        <input type="email" id="email" value={cat.form.email} onChange={(e) => handleEmailChange(index, e.target.value)} required /><br />
 
                                         <label htmlFor="telefono">Teléfono de Contacto:</label>
-                                        <input type="tel" id="telefono" value={telefono} onChange={(e) => setTelefono(e.target.value)} required /><br />
+                                        <input type="tel" id="telefono" value={cat.form.telefono} onChange={(e) => handleTelefonoChange(index, e.target.value)} required /><br />
 
                                         <label htmlFor="motivo">Motivo de Adopción:</label>
-                                        <textarea id="motivo" value={motivo} onChange={(e) => setMotivo(e.target.value)} rows="4" required></textarea><br />
+                                        <textarea id="motivo" value={cat.form.motivo} onChange={(e) => handleMotivoChange(index, e.target.value)} rows="4" required></textarea><br />
 
                                         <input type="submit" value="Enviar Solicitud" />
                                     </form>
                                     {showSuccessMessage && (
                                         <div className="success-message">
                                             ¡Solicitud enviada con éxito! Número de Adopción: {numeroAdopcion}
+                                            <img src={eyImage} alt="Ey" />
                                         </div>
                                     )}
+                                    
                                 </div>
                             )}
+                              
 
                             {showCareInfo && (
                                 <div className="care-info-container">

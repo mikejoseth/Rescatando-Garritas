@@ -129,7 +129,7 @@ function Login() {
   
 </div>
 <div class="logo-container">
-    <img src={require('../img/pichi.png')} alt="Gatito" className="logo" />
+    <img src={require('../img/logo.png')} alt="Gatito" className="logo" />
 </div>
 
 
@@ -166,11 +166,11 @@ function Login() {
               <img src={require('../img/pichi.png')} alt="Gatito" className="image-redonda-1" />
               <img src={require('../img/tito.jpeg')} alt="Gatito" className="image-redonda-2" />
               <img src={require('../img/re.jpg')} alt="Gatito 3" className="image-redonda-3" />
-              <img src={require('../img/re.jpg')} alt="Gatito 3" className="image-redonda-3" />
-              <img src={require('../img/re.jpg')} alt="Gatito 3" className="image-redonda-3" />
-              <img src={require('../img/re.jpg')} alt="Gatito 3" className="image-redonda-3" />
-              <img src={require('../img/re.jpg')} alt="Gatito 3" className="image-redonda-3" />
-              <img src={require('../img/re.jpg')} alt="Gatito 3" className="image-redonda-3" />
+              <img src={require('../img/03.png')} alt="Gatito 3" className="image-redonda-3" />
+              <img src={require('../img/01.jpeg')} alt="Gatito 3" className="image-redonda-3" />
+              <img src={require('../img/o2.png')} alt="Gatito 3" className="image-redonda-3" />
+              <img src={require('../img/04.png')} alt="Gatito 3" className="image-redonda-3" />
+              <img src={require('../img/05.png')} alt="Gatito 3" className="image-redonda-3" />
             </div>
           
          <h4>En Rescatando Garritas, estamos dedicados a salvar y encontrar hogares amorosos para gatos necesitados. Fundada en 2018 por un grupo de amantes de los felinos, nuestra misión es proporcionar una segunda oportunidad a los gatos abandonados, maltratados o en situación de riesgo, conectándolos con familias comprometidas y cariñosas.</h4>
@@ -186,9 +186,11 @@ function Login() {
         <h3>informacion de contacto</h3>
         <h4>¿Interesado en adoptar o necesitas más información? ¡Contáctanos!</h4>
         <ul className="quote-list">
-         <li>- Teléfono: [Número de teléfono]</li>
-         <li>- Correo electrónico: [Correo electrónico]</li>
-         <li>- Dirección: [Dirección de la ubicación física, si corresponde]</li>
+         <li>- Teléfono: [3125535987]</li>
+         <li>- Correo electrónico: [rescatandoGarritas666@gmail.com]</li>
+         <li>- Dirección: [Calle 12 # 34-56
+Barrio Primavera
+Bogotá, Ciudad Bolívar]</li>
         </ul>
         <h4>
         "La vida se asemeja a un jardín donde cada instante es como una flor única y especial. En nuestra prisa diaria, a menudo pasamos por alto estos pequeños momentos de belleza. Sin embargo, es vital recordar que, al igual que las flores, la vida está llena de ciclos de cambio, crecimiento y renovación"</h4>

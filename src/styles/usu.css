@@ -1,4 +1,24 @@
-/* Estilos para las imágenes en la galería */
+.f {
+    position: fixed;
+    top: 20%; /* Separado un 20% desde la parte superior */
+    left: 2%; /* Separado un 20% desde el borde izquierdo */
+    width: 500x;
+    height: 400px;
+    border-radius: 10%; /* Esto hará que los bordes sean redondeados */
+    overflow: hidden; /* Asegura que la imagen se ajuste a los bordes redondeados */
+    transition: all 0.3s ease; /* Agrega una animación de transición a todos los cambios */
+  }
+  
+  .f:hover {
+    transform: scale(1.2); /* Escala el contenedor al 120% en el hover */
+  }
+  
+  .f img {
+    width: 100%;
+    height: 100%;
+  }
+  
+
 .image-gallery {
     position: relative; /* Hace que la posición absoluta de la imagen 2 sea relativa a este contenedor */
     display: inline-block; /* Asegura que el contenedor ocupe solo el espacio necesario */
@@ -44,7 +64,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('/src/img/logo.png');
+    background-image: url('/src/img/usu.png');
     background-size: cover;
     background-position: center;
     z-index: -1;
@@ -153,7 +173,7 @@
     border-radius: 12px; /* Bordes redondeados */
     padding: 8px; /* Reduje el espacio interno a 8px */
     width: 50%; /* Reduje el ancho del contenedor del formulario al 50% */
-    max-height: 300px; /* Reduje la altura máxima del contenedor del formulario a 300px */
+    max-height: 345px; /* Reduje la altura máxima del contenedor del formulario a 300px */
     margin: 0 auto;
     transition: opacity 0.3s ease, max-height 0.3s ease;
     animation: borderBlink 1.5s infinite alternate; /* Agregué la animación de parpadeo */
@@ -170,13 +190,13 @@
 
 .adoption-form-container.active {
     opacity: 1;
-    max-height: 400px; /* Incrementé la altura máxima deseada */
+    max-height: 700px; /* Incrementé la altura máxima deseada */
     border-color: #e5e8ec; /* Color del borde cuando está activo */
 }
 
 .adoption-form-container form {
     font-size: 12px; /* Reduje el tamaño de fuente */
-    margin-bottom: 6px; /* Reduje el margen inferior */
+    margin-bottom: 16px; /* Reduje el margen inferior */
 }
 
 .adoption-form-container label {
